@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 // eslint-disable-next-line no-use-before-define
 import React, { useState } from 'react';
 
@@ -23,7 +24,7 @@ type Place = {
 }
 
 type Props = {
-  onSelectLocation: (location: OrderLocationData) => void
+  onSelectLocation: (location: OrderLocationData) => void;
 }
 
 function OrderLocation({ onSelectLocation }: Props) {

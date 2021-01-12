@@ -1,13 +1,20 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { Product } from '../models/Product';
 import { CurrencyFormatter } from '../utils/CurrencyFormatter';
 
 type Props = {
     product : Product;
+    onSelectProduct: (product: Product) => void;
+    isSelected: boolean;
 }
 
-function ProductCard({ product }: Props) {
+function ProductCard({ product, onSelectProduct, isSelected }: Props) {
   return (
-    <div className="order-card-container">
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    <div
+      className={`order-card-container ${isSelected ? 'selected' : ''}`}
+      onClick={() => onSelectProduct(product)}
+    >
       <h3 className="order-card-title">
         {product.name}
       </h3>
